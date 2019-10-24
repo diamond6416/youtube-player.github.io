@@ -61,7 +61,7 @@ body {
   57.142857142857146%  {background-color: teal;}
   71.42857142857143%  {background-color: #6666ff;}
   85.71428571428572%  {background-color: DarkSlateGray;}
-  100% {background-color: ;}
+  100% {background-color: gold;}
 }
 body.active {
  -webkit-animation-name: animation1;
@@ -185,18 +185,21 @@ const b = document.querySelector('.logo');
 const a = document.querySelector('body');
 const c = document.querySelector('body.active');
 let isDown1 = false;
-b.addEventListener('touchstart', (e) => {
+b.addEventListener('mousedown', (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.add('active');
 });
-b.addEventListener('touchend', () => {
+b.addEventListener('mouseup', () => {
   isDown1 = false;
   b.classList.remove('active');
   
 });
 $(document).ready(function(){
-  $(b).touchend(function(){
+  $(".logo").click(function()
+                   
+            {
+    
     $(c).toggle();
   });
 });
