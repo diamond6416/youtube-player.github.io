@@ -200,6 +200,11 @@ b.addEventListener('touchend', () => {
   b.classList.remove('active');
   a.classList.remove('active');
 });
+  window.onload = function() {
+    document.body.onselectstart = function() {
+        return false;
+    }
+}
     </script>
 </body>
 </html>
