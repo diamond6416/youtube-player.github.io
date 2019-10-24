@@ -191,19 +191,16 @@ const a = document.querySelector('body');
 let isDown1 = false;
 b.addEventListener('touchstart', (e) => {
   isDown1 = true;
-  b.preventDefault();
   b.classList.add('active');
   a.classList.add('active');
 });
 b.addEventListener('touchend', () => {
   isDown1 = false;
-   b.preventDefault();
   b.classList.remove('active');
   a.classList.remove('active');
 });
 b.addEventListener('touchend', () => {
   isDown1 = false;
-   b.preventDefault();
   b.classList.remove('active');
   a.classList.remove('active');
 });
