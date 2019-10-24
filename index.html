@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +25,7 @@ html, body {
     margin-top: 50px;
     margin-bottom: 25px;
     width: 100%;
-    overflow-x: visible;
+    overflow-x: hidden;
     overflow-y: hidden;
     white-space: pre;
     transition: all 0.0555s;
@@ -161,17 +160,13 @@ body.active {
 let isDown = false;
 let startX;
 let scrollLeft;
-if(!!('ontouchstart' in window)){
+
 slider.addEventListener('touchstart', (e) => {
   isDown = true;
   slider.classList.add('active');
   startX = e.pageX - slider.offsetLeft;
   console.log(slider.offsetLeft);
   scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('touchend', () => {
-  isDown = false;
-  slider.classList.remove('active');
 });
 slider.addEventListener('touchend', () => {
   isDown = false;
@@ -184,7 +179,6 @@ slider.addEventListener('touchmove', (e) => {
   const walk = (x - startX) * 3.055; //scroll-fast
   slider.scrollLeft = scrollLeft - walk;
 });
-}
 
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
@@ -197,12 +191,7 @@ b.addEventListener('touchstart', (e) => {
 b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
-  a.classList.remove('active');
-});
-b.addEventListener('touchend', () => {
-  isDown1 = false;
-  b.classList.remove('active');
-  a.classList.remove('active');
+  
 });
     </script>
 </body>
