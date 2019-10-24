@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Youtube Player</title>
+<title>Youtube Player Main Page</title>
 <style>
   h1 {
   color: white;
@@ -156,7 +156,7 @@ body.active {
 let isDown = false;
 let startX;
 let scrollLeft;
-if(!!('ontouchstart' in window)){
+
 slider.addEventListener('mousedown', (e) => {
   isDown = true;
   slider.classList.add('active');
@@ -179,22 +179,22 @@ slider.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 3.055; //scroll-fast
   slider.scrollLeft = scrollLeft - walk;
 });
-}
+
 
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
 let isDown1 = false;
-b.addEventListener('mousedown', (e) => {
+b.addEventListener('touchstart', (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.add('active');
 });
-b.addEventListener('mouseleave', () => {
+b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
   a.classList.remove('active');
 });
-b.addEventListener('mouseup', () => {
+b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
   a.classList.remove('active');
