@@ -183,25 +183,16 @@ slider.addEventListener('touchmove', (e) => {
 
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
-const c = document.querySelector('body.active');
 let isDown1 = false;
-b.addEventListener('mousedown', (e) => {
+b.addEventListener('touchstart', (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.add('active');
 });
-b.addEventListener('mouseup', () => {
+b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
   
-});
-$(document).ready(function(){
-  $(".logo").click(function()
-                   
-            {
-    
-    $(c).toggle();
-  });
 });
     </script>
 </body>
