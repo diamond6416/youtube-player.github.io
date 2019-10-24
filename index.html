@@ -156,45 +156,45 @@ body.active {
 let isDown = false;
 let startX;
 let scrollLeft;
-
-slider.addEventListener('touchstart', (e) => {
+if(!!('ontouchstart' in window)){
+slider.addEventListener('mousedown', (e) => {
   isDown = true;
   slider.classList.add('active');
   startX = e.pageX - slider.offsetLeft;
   console.log(slider.offsetLeft);
   scrollLeft = slider.scrollLeft;
 });
-slider.addEventListener('touchend, () => {
+slider.addEventListener('mouseleave', () => {
   isDown = false;
   slider.classList.remove('active');
 });
-slider.addEventListener('touchend', () => {
+slider.addEventListener('mouseup', () => {
   isDown = false;
   slider.classList.remove('active');
 });
-slider.addEventListener('touchmove', (e) => {
+slider.addEventListener('mousemove', (e) => {
   if(!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
   const walk = (x - startX) * 3.055; //scroll-fast
   slider.scrollLeft = scrollLeft - walk;
 });
-
+}
 
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
 let isDown1 = false;
-b.addEventListener('touchstart', (e) => {
+b.addEventListener('mousedown', (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.add('active');
 });
-b.addEventListener('touchend', () => {
+b.addEventListener('mouseleave', () => {
   isDown1 = false;
   b.classList.remove('active');
   a.classList.remove('active');
 });
-b.addEventListener('touchend', () => {
+b.addEventListener('mouseup', () => {
   isDown1 = false;
   b.classList.remove('active');
   a.classList.remove('active');
