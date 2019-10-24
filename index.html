@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +61,7 @@ body {
   57.142857142857146%  {background-color: teal;}
   71.42857142857143%  {background-color: #6666ff;}
   85.71428571428572%  {background-color: DarkSlateGray;}
-  100% {background-color: inherited;}
+  100% {background-color: ;}
 }
 body.active {
  -webkit-animation-name: animation1;
@@ -182,6 +183,7 @@ slider.addEventListener('touchmove', (e) => {
 
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
+const c = document.querySelector('body.active');
 let isDown1 = false;
 b.addEventListener('touchstart', (e) => {
   isDown1 = true;
@@ -192,6 +194,11 @@ b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
   
+});
+$(document).ready(function(){
+  $(b).touchend(function(){
+    $(c).toggle();
+  });
 });
     </script>
 </body>
