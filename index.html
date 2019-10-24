@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>CodePen - Youtube Player Main Page</title>
+<title>Youtube Player Main Page</title>
 <style>
   h1 {
   color: white;
@@ -151,28 +151,29 @@ body.active {
 </div>
 </div>
 <body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script id="rendered-js">
       const slider = document.querySelector('.items');
 let isDown = false;
 let startX;
 let scrollLeft;
 if(!!('ontouchstart' in window)){
-slider.addEventListener('mousedown', (e) => {
+slider.addEventListener('touchstart', (e) => {
   isDown = true;
   slider.classList.add('active');
   startX = e.pageX - slider.offsetLeft;
   console.log(slider.offsetLeft);
   scrollLeft = slider.scrollLeft;
 });
-slider.addEventListener('mouseleave', () => {
+slider.addEventListener('touchend', () => {
   isDown = false;
   slider.classList.remove('active');
 });
-slider.addEventListener('mouseup', () => {
+slider.addEventListener('touchend', () => {
   isDown = false;
   slider.classList.remove('active');
 });
-slider.addEventListener('mousemove', (e) => {
+slider.addEventListener('touchmove', (e) => {
   if(!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
@@ -184,17 +185,17 @@ slider.addEventListener('mousemove', (e) => {
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
 let isDown1 = false;
-b.addEventListener('mousedown', (e) => {
+b.addEventListener('touchstart', (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.add('active');
 });
-b.addEventListener('mouseleave', () => {
+b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
   a.classList.remove('active');
 });
-b.addEventListener('mouseup', () => {
+b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
   a.classList.remove('active');
