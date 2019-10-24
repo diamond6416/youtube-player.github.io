@@ -184,17 +184,17 @@ slider.addEventListener('mousemove', (e) => {
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
 let isDown1 = false;
-b.addEventListener('touchstart', (e) => {
+b.addEventListener('mousedown', (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.add('active');
 });
-b.addEventListener('touchend', () => {
+b.addEventListener('mouseleave', () => {
   isDown1 = false;
   b.classList.remove('active');
   a.classList.remove('active');
 });
-b.addEventListener('touchend', () => {
+b.addEventListener('mouseup', () => {
   isDown1 = false;
   b.classList.remove('active');
   a.classList.remove('active');
