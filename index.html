@@ -3,19 +3,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>DanTDM | Videos</title>
+<title>Youtube Player Main Page</title>
 <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-h2 {
-  font-family: 'Roboto', sans-serif;
+h1 {
+   font-family: 'Roboto', sans-serif;
   color: white;
   -webkit-user-select: none;
-  white-space: pre-wrap;
-  text-align: left;
-  padding-left: 8%;
-  line-height: 130%;
-  
- 
   
 }
 html, body {
@@ -37,10 +31,10 @@ html, body {
     overflow-x: hidden;
     overflow-y: hidden;
     white-space: pre;
-    -webkit-transition: all 0.0555s;
+   -webkit-transition: all 0.0555s;
     transform: scale(1);
     will-change: transform;
-    -webkit-user-select: none;
+    user-select: none;
     cursor: pointer;
     display: flex; 
   }
@@ -100,9 +94,8 @@ body.active {
     -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
     user-drag: none;
 }
-.thumbnail {
- margin-top: -13%;
-  
+.channel {
+  border-radius:50%;
      /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
     /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
     -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
@@ -135,9 +128,6 @@ body.active {
     opacity: 1;
   }
 }
-.item {
-  overflow: hidden;
-}
 </style>
 </head>
 <body translate="no">
@@ -153,19 +143,9 @@ body.active {
 <center><div class="wrapper animation2">
 <div class="items">
 <div class="item">
-<center><a target="_blank" rel="noopener noreferrer" href="https://invidio.us/latest_version?id=7x7-uyR5iY8&itag=22">
-<img src="https://invidio.us/vi/7x7-uyR5iY8/maxres.jpg" width= 100%; height= 100%; class="thumbnail" /></a>
-<h2>I Found a HIDDEN GOLD MINE in Minecraft<br>Hardcore!</h2>
-</center></div>
-<div class="item">
-<center><a target="_blank" rel="noopener noreferrer" href="https://invidio.us/latest_version?id=Ud_PBj8NSZk&itag=22">
-<img src="https://invidio.us/vi/Ud_PBj8NSZk/maxres.jpg" width= 100%; height= 100%; class="thumbnail" /></a>
-<h2>We LOST SOMEONE in Minecraft Hardcore...</h2>
-</center></div>
-<div class="item">
-<center><a target="_blank" rel="noopener noreferrer" href="https://invidio.us/latest_version?id=UM_84ZR__uw&itag=22">
-<img src="https://invidio.us/vi/UM_84ZR__uw/maxres.jpg" width= 100%; height= 100%; class="thumbnail" /></a>
-<h2>I Built a VILLAGER MACHINE in Minecraft Hardcore!</h2>
+<center><a href="dantdm">
+<img src="https://yt3.ggpht.com/a/AGF-l7_t5ekdUDowWCGVJ5FIGoBO4lI4TFCoC_7vZQ=s288-c-k-c0xffffffff-no-rj-mo" width= 50%; height= 50%; class="channel" ; /></a>
+<h1>DanTDM</h1>
 </center></div>
 <div class="item"></div>
 <div class="item"></div>
@@ -177,6 +157,7 @@ body.active {
 </div>
 </div>
 <body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script id="rendered-js">
       const slider = document.querySelector('.items');
 let isDown = false;
