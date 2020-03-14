@@ -1,73 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youtube Player</title>
-  </head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+h1 {
+   font-family: 'Roboto', sans-serif;
+  color: white;
+  -webkit-user-select: none;
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 14%;
+  position: relative;
+  transform: translateY(-50%);
+
+  
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width:93%;
+  -webkit-user-select: none;
+  margin-top: 0%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.items {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: pre;
+   -webkit-transition: all 0.0555s;
+    transform: scale(1);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    display: flex; 
+  }
+
+.items.active {
+  transform: scale(1.011);
+}
+
+.item {
+  background: #333333;
+  border: white;
+  height: 370px;
+  margin-right: 4%;
+  flex: 0 0 370px;
+  border-radius: 10%;
+}
+body {
+  background-color:#393939;
+  -webkit-user-select: none;
+}
+@-webkit-keyframes animation1 {
+  0%   {background-color: steelblue;}
+  14.285714285714286%  {background-color:MediumSeaGreen;}
+  28.571428571428573%  {background-color: LightCoral;}
+  42.85714285714286%  {background-color: orange;}
+  57.142857142857146%  {background-color: teal;}
+  71.42857142857143%  {background-color: #6666ff;}
+  85.71428571428572%  {background-color: DarkSlateGray;}
+  100% {background-color: gold;}
+}
+body.active {
+ -webkit-animation-name: animation1;
+ -webkit-animation-duration: 20s; 
+ -webkit-animation-iteration-count: infinite
+}
+.logo
+{
+  -webkit-user-select: none;
+ margin-top: 3%;
+  margin-left: 3.53%;
+ -webkit-transition: all 0.01s;
+ position: relative;
+ cursor: pointer;
+  will-change: transform;
+}
+.logo.active {
+  transform: scale(0.9);
+}
+.logo {
+    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
+    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+}
+.channel {
+  border-radius:50%;
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+}
+.animation2 {
+ -webkit-animation-name: fade;
+ -webkit-animation-duration: 3.5s; 
+ -webkit-animation-iteration-count: 1
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-delay: 0s;}
+  .animation3 {
+ -webkit-animation-name: fade;
+ -webkit-animation-duration: 4.5s; 
+ -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+    -webkit-animation-delay: 1s;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+ 
+  to {
+    opacity: 1;
+  }
+}
+body {
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.item:hover, .item:active {
+  background: #2d2d2d;
+}
+
+a:link {
+text-decoration: none;
+}
+
+.channel {
+  height: 55%;
+  width: 55%;
+}
+</style>
+<title>Youtube Player</title>
+</head>
 <body translate="no">
-  <!-- width and height makes logo non-zoomable--> 
-   <img src="https://i.postimg.cc/TYbjv2CF/Logo00.png" width= 10%; height= 10%; class="logo animation3";/>
-     <center><div class="wrapper animation2">
-  <div class="items">
-    <div class="item">
-      <center><a href="in_a_nutshell">
-     <img src="https://invidio.us/ggpht/a/AGF-l79_o6QngIpSSvxjU7AnZu86z3_7OzCy-wn2Bw=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><h1>Kurzgesagt<br>In a Nutshell</h1></a>
-        
-        
-      </center>
-    </div>
-    
-    <div class="item">
-      <center><a href="veritasium">
-     <img src="https://invidio.us/ggpht/a/AGF-l7-_ZcdonX2zvx6WdAnHOEO5cgrVr2a2cpVLgA=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><h1>Veritasium</h1></a>
-        
-        
-      </center>
-    </div>
-    
-    <div class="item">
-      <center><a href="ted-ed">
-     <img src="https://invidio.us/ggpht/a/AGF-l7_KYzscxJEPD222JCwLBSiMIDXi5wtsWc4Rww=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><h1>TED-Ed</h1></a>
-        
-        
-      </center>
-    </div>
-    
-    <div class="item">
-      <center><a href="minute_physics">
-     <img src="https://invidio.us/ggpht/a/AGF-l7_90_OopgqRNxh6zi7bhcOT8SHeQLbJDR1ZFQ=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><h1>Minute Physics</h1></a>
-        
-        
-      </center>
-    </div>
-    
-    <div class="item">
-      <center><a href="minute_earth">
-     <img src="https://invidio.us/ggpht/a/AGF-l7-nmd4mkyVlqI3BlpGsgyoCqhBGtXkHErAiww=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><h1>Minute Earth</h1></a>
-        
-       
-      </center>
-    </div>
-    
-    <div class="item">
-      <center><a href="dantdm">
-     <img src="https://invidio.us/ggpht/a/AGF-l7_t5ekdUDowWCGVJ5FIGoBO4lI4TFCoC_7vZQ=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><h1>DanTDM</h1></a>
-        
-       
-      </center>
-    </div>
-    
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </div>
+<img src="https://i.postimg.cc/TYbjv2CF/Logo00.png" width= 10%; height= 10%; class="logo animation3" ; />
+<center><div class="wrapper animation2">
+<div class="items">
+<div class="item">
+<center><a href="in_a_nutshell">
+<img src="https://invidio.us/ggpht/a/AGF-l79_o6QngIpSSvxjU7AnZu86z3_7OzCy-wn2Bw=s288-c-k-c0xffffffff-no-rj-mo" class="channel" ; /><h1>Kurzgesagt<br>In a Nutshell</h1></a>
+</center>
 </div>
-       
-       
-       
+<div class="item">
+<center><a href="veritasium">
+<img src="https://invidio.us/ggpht/a/AGF-l7-_ZcdonX2zvx6WdAnHOEO5cgrVr2a2cpVLgA=s288-c-k-c0xffffffff-no-rj-mo" class="channel" ; /><h1>Veritasium</h1></a>
+</center>
+</div>
+<div class="item">
+<center><a href="ted-ed">
+<img src="https://invidio.us/ggpht/a/AGF-l7_KYzscxJEPD222JCwLBSiMIDXi5wtsWc4Rww=s288-c-k-c0xffffffff-no-rj-mo" class="channel" ; /><h1>TED-Ed</h1></a>
+</center>
+</div>
+<div class="item">
+<center><a href="minute_physics">
+<img src="https://invidio.us/ggpht/a/AGF-l7_90_OopgqRNxh6zi7bhcOT8SHeQLbJDR1ZFQ=s288-c-k-c0xffffffff-no-rj-mo" class="channel" ; /><h1>Minute Physics</h1></a>
+</center>
+</div>
+<div class="item">
+<center><a href="minute_earth">
+<img src="https://invidio.us/ggpht/a/AGF-l7-nmd4mkyVlqI3BlpGsgyoCqhBGtXkHErAiww=s288-c-k-c0xffffffff-no-rj-mo" class="channel" ; /><h1>Minute Earth</h1></a>
+</center>
+</div>
+<div class="item">
+<center><a href="dantdm">
+<img src="https://invidio.us/ggpht/a/AGF-l7_t5ekdUDowWCGVJ5FIGoBO4lI4TFCoC_7vZQ=s288-c-k-c0xffffffff-no-rj-mo" class="channel" ; /><h1>DanTDM</h1></a>
+</center>
+</div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+</div>
+</div>
 <body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script id="rendered-js">
+const slider = document.querySelector('.items');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('touchstart', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  console.log(slider.offsetLeft);
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('touchend', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('touchmove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3.055; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+const b = document.querySelector('.logo');
+const a = document.querySelector('body');
+let isDown1 = false;
+b.addEventListener('touchstart', (e) => {
+  isDown1 = true;
+  b.classList.add('active');
+  a.classList.toggle('active');
+});
+b.addEventListener('touchend', () => {
+  isDown1 = false;
+  b.classList.remove('active');
+  
+});
+    </script>
+</body>
+</html>
