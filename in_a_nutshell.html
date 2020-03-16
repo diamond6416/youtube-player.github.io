@@ -331,6 +331,16 @@ document.getElementById('6').addEventListener('touchstart', function() {
 document.getElementById('7').addEventListener('touchstart', function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=5TbUxGZtwGI&itag=22';
   });
+    
+    var a=document.getElementsByTagName("a");
+for(var i=0;i<a.length;i++)
+{
+    a[i].onclick=function()
+    {
+        window.location=this.getAttribute("href");
+        return false
+    }
+}
   </script>
 </body>
   </html>
