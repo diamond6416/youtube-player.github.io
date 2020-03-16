@@ -1,0 +1,16 @@
+{
+  "name": "Triplay",
+  "short_name": "Triplay",
+  "lang": "en-US",
+  "start_url": "https://diamond6416.github.io/youtube-player.github.io/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#333333",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/sD0r9rfG/Logo00-1.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    }
+  ]
+}
