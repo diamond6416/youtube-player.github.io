@@ -2,7 +2,7 @@
   "name": "Triplay",
   "short_name": "Triplay",
   "lang": "en-US",
-  "start_url": "https://diamond6416.github.io/youtube-player.github.io/",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "theme_color": "#333333",
