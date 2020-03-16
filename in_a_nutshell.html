@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="apple-mobile-web-app-title" content="Triplay">
+  <link href="https://i.postimg.cc/bwn8gBBy/New-Project-1.png" media="(device-width: 1024px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image"/>
+  <link rel="apple-touch-icon" sizes="167x167" href="https://i.postimg.cc/sD0r9rfG/Logo00-1.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurzgesagt</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+h1 {
+   font-family: 'Roboto', sans-serif;
+  color: white;
+  -webkit-user-select: none;
+  font-weight: bold;
+  font-size: 30px;
+  position: relative;
+   white-space: normal;
+  text-align: left;
+  padding-left: 7%;
+  padding-right: 7%;
+  line-height: 130%;
+  margin-top: 2.7%;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 93%;
+  -webkit-user-select: none;
+  margin-top: 17%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.items {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: pre;
+   -webkit-transition: all 0.0555s;
+    transform: scale(1);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    display: flex; 
+  }
+
+.items.active {
+  transform: scale(1.011);
+}
+
+.item {
+  background: #333333;
+  border: white;
+  height: 350px;
+  margin-right: 4%;
+  flex: 0 0 370px;
+  border-radius: 10%;
+}
+body {
+  background-color:#393939;
+  -webkit-user-select: none;
+  user-select: none;
+}
+@-webkit-keyframes animation1 {
+  0%   {background-color: steelblue;}
+  14.285714285714286%  {background-color:MediumSeaGreen;}
+  28.571428571428573%  {background-color: LightCoral;}
+  42.85714285714286%  {background-color: orange;}
+  57.142857142857146%  {background-color: teal;}
+  71.42857142857143%  {background-color: #6666ff;}
+  85.71428571428572%  {background-color: DarkSlateGray;}
+  100% {background-color: gold;}
+}
+body.active {
+ -webkit-animation-name: animation1;
+ -webkit-animation-duration: 20s; 
+ -webkit-animation-iteration-count: infinite
+}
+.logo
+{
+  -webkit-user-select: none;
+ margin-top: 10%;
+  margin-left: 3.53%;
+ -webkit-transition: all 0.01s;
+ position: relative;
+ cursor: pointer;
+  will-change: transform;
+}
+.logo.active {
+  transform: scale(0.9);
+}
+.logo {
+    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
+    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+}
+.channel {
+  margin-top: -13%;
+    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+}
+.animation2 {
+ -webkit-animation-name: fade;
+ -webkit-animation-duration: 3.5s; 
+ -webkit-animation-iteration-count: 1
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-delay: 0s;
+}
+  .animation3 {
+ -webkit-animation-name: fade;
+ -webkit-animation-duration: 4.5s; 
+ -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+    -webkit-animation-delay: 1s;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+ 
+  to {
+    opacity: 1;
+  }
+}
+body {
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.item:hover, .item:active {
+  background: #2d2d2d;
+}
+
+a:link {
+text-decoration: none;
+}
+
+.channel {
+  height: 100%;
+  width: 100%;
+}
+.item {
+  overflow: hidden;
+}
+.channel {
+  cursor: pointer;
+  -webkit-animation-name: fade;
+ -webkit-animation-duration: 0s; 
+ -webkit-animation-iteration-count: 1
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-delay: 0s;
+}
+.vid {
+  margin-bottom: 0;
+  margin-top: -18.7%;
+  border-radius: 15px;
+  -webkit-transition: all 0.01s;
+  object-fit: cover;
+}
+
+.back {
+ margin: 0;
+ position: absolute;
+  top: 0;
+   -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
+  border-radius: 50%;
+}
+
+.y {
+  position: relative;
+  margin: 45%;
+  background: white;
+  border-radius: 50%;
+}
+  </style>
+  </head>
+<body ontouchstart="" translate="no">
+  <!-- width and height makes logo non-zoomable-->
+  
+  <a target="_top" rel="noopener noreferrer" href="https://diamond6416.github.io/youtube-player.github.io/">
+    <div class="back animation3";><img src="https://i.postimg.cc/Wb12sxZ1/icons8-back-to-60.png" width= 100%; height= 100% class="y";/></div>
+  </a>
+  
+   <img src="https://i.postimg.cc/TYbjv2CF/Logo00.png" width= 10%; height= 10%; class="logo animation3";/>
+  
+ <center><video controls autoplay class="vid animation3" id="video" preload="auto" width="640" height="360" poster="https://invidio.us/ggpht/eG1BG-8Ra-zjCP9OGIRGbaLO4z-83im-gM99vUhiMrsEpsu_5cmXy3tnA2dRsbEs0VC5FxPlew=w1280-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" data-setup="{}">
+    <source id="source_video" src="/" type='video/mp4' />
+   </video></center>
+  
+     <center><div class="wrapper animation2">
+  <div class="items">
+    <div class="item" id="1">
+      <center>
+     <img src="https://invidio.us/vi/1AElONvi9WQ/maxres.jpg" class="channel";/><h1>Why Blue Whales Don't Get Cancer - Peto's Paradox</h1>
+      </center>
+    </div>
+    
+    <div class="item" id="2">
+      <center>
+     <img src="https://invidio.us/vi/yS1ibDImAYU/maxres.jpg" class="channel";/><h1>End of Space – Creating a Prison for Humanity</h1>
+      </center>
+    </div>
+    
+    <div class="item" id="3">
+      <center>
+     <img src="https://invidio.us/vi/RS7IzU2VJIQ/maxres.jpg" class="channel";/><h1>Plastic Pollution: How Humans are Turning the World into Plastic</h1>
+      </center>
+    </div>
+    
+    <div class="item" id="4">
+      <center>
+     <img src="https://invidio.us/vi/9tbxDgcv74c/maxres.jpg" class="channel";/><h1>What If You Detonated a Nuclear Bomb In The Marianas Trench? (Science not Fantasy)</h1>
+      </center>
+    </div>
+    
+     <div class="item" id="5">
+      <center>
+     <img src="https://invidio.us/vi/9P6rdqiybaw/maxres.jpg" class="channel";/><h1>Wormholes Explained – Breaking Spacetime</h1>
+      </center>
+    </div>
+    
+     <div class="item" id="6">
+      <center>
+     <img src="https://invidio.us/vi/YI3tsmFsrOg/maxres.jpg" class="channel";/><h1>The Deadliest Being on Planet Earth – The Bacteriophage</h1>
+      </center>
+    </div>
+    
+     <div class="item" id="7">
+      <center>
+     <img src="https://invidio.us/vi/5TbUxGZtwGI/maxres.jpg" class="channel";/><h1>Time: The History & Future of Everything – Remastered</h1>
+      </center>
+    </div>
+    
+  </div>
+</div>
+  </center>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script id="rendered-js">
+  const slider = document.querySelector('.items');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('touchstart', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  console.log(slider.offsetLeft);
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('touchend', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('touchmove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3.055; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+const b = document.querySelector('.logo');
+const a = document.querySelector('body');
+let isDown1 = false;
+b.addEventListener('touchstart', (e) => {
+  isDown1 = true;
+  b.classList.add('active');
+  a.classList.toggle('active');
+});
+b.addEventListener('touchend', () => {
+  isDown1 = false;
+  b.classList.remove('active');
+  
+});
+
+document.getElementById('1').addEventListener('touchstart', function() {
+    document.getElementById('video').src = 'https://invidio.us/latest_version?id=1AElONvi9WQ&itag=22';
+  });
+
+document.getElementById('2').addEventListener('touchstart', function() {
+    document.getElementById('video').src = 'https://invidio.us/latest_version?id=yS1ibDImAYU&itag=22';
+  });
+
+document.getElementById('3').addEventListener('touchstart', function() {
+    document.getElementById('video').src = 'https://invidio.us/latest_version?id=RS7IzU2VJIQ&itag=22';
+  });
+
+document.getElementById('4').addEventListener('touchstart', function() {
+    document.getElementById('video').src = 'https://invidio.us/latest_version?id=9tbxDgcv74c&itag=22';
+  });
+
+document.getElementById('5').addEventListener('touchstart', function() {
+    document.getElementById('video').src = 'https://invidio.us/latest_version?id=9P6rdqiybaw&itag=22';
+  });
+
+document.getElementById('6').addEventListener('touchstart', function() {
+    document.getElementById('video').src = 'https://invidio.us/latest_version?id=YI3tsmFsrOg&itag=22';
+  });
+
+document.getElementById('7').addEventListener('touchstart', function() {
+    document.getElementById('video').src = 'https://invidio.us/latest_version?id=5TbUxGZtwGI&itag=22';
+  });
+  </script>
+</body>
+  </html>
