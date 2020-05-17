@@ -243,23 +243,22 @@ text-decoration: none;
 </div>
   </center>
   <script id="rendered-js">
-     const slider = document.querySelector('.items');
+       const slider = document.querySelector('.items');
 let isDown = false;
 let startX;
 let scrollLeft;
 
-slider.addEventListener('touchstart', (e) => {
+slider.addEventListener('touchstart', {passive: true}, (e) => {
   isDown = true;
   slider.classList.add('active');
   startX = e.pageX - slider.offsetLeft;
-  console.log(slider.offsetLeft);
   scrollLeft = slider.scrollLeft;
 });
-slider.addEventListener('touchend', () => {
+slider.addEventListener('touchend', {passive: true}, () => {
   isDown = false;
   slider.classList.remove('active');
 });
-slider.addEventListener('touchmove', (e) => {
+slider.addEventListener('touchmove', {passive: true}, (e) => {
   if(!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
@@ -270,14 +269,15 @@ slider.addEventListener('touchmove', (e) => {
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
 let isDown1 = false;
-b.addEventListener('touchstart', (e) => {
+b.addEventListener('touchstart', {passive: true}, (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.toggle('active');
 });
-b.addEventListener('touchend', () => {
+    b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
+  
 });
    </script>
 </body>
