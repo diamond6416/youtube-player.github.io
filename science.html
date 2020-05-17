@@ -338,23 +338,22 @@ text-decoration: none;
   </center>
   
   <script id="rendered-js">
-  const slider = document.querySelector('.items');
+    const slider = document.querySelector('.items');
 let isDown = false;
 let startX;
 let scrollLeft;
 
-slider.addEventListener('touchstart', (e) => {
+slider.addEventListener('touchstart', {passive: true}, (e) => {
   isDown = true;
   slider.classList.add('active');
   startX = e.pageX - slider.offsetLeft;
-  console.log(slider.offsetLeft);
   scrollLeft = slider.scrollLeft;
 });
-slider.addEventListener('touchend', () => {
+slider.addEventListener('touchend', {passive: true}, () => {
   isDown = false;
   slider.classList.remove('active');
 });
-slider.addEventListener('touchmove', (e) => {
+slider.addEventListener('touchmove', {passive: true}, (e) => {
   if(!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
@@ -365,88 +364,90 @@ slider.addEventListener('touchmove', (e) => {
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
 let isDown1 = false;
-b.addEventListener('touchstart', (e) => {
+b.addEventListener('touchstart', {passive: true}, (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.toggle('active');
 });
-b.addEventListener('touchend', () => {
+    b.addEventListener('touchend', () => {
   isDown1 = false;
   b.classList.remove('active');
   
 });
+    
+//
 
-document.getElementById('video').addEventListener('touchstart', function() {
+document.getElementById('video').addEventListener('touchstart', {passive: true}, function() {
    document.getElementById("video").play();
   });
 
 //
 
-document.getElementById('17').addEventListener('touchstart', function() {
+document.getElementById('17').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=-bVi1w0m8x8&itag=22';
   });    
 
-document.getElementById('16').addEventListener('touchstart', function() {
+document.getElementById('16').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=F0zUOcZN6sI&itag=22';
   });
     
-document.getElementById('15').addEventListener('touchstart', function() {
+document.getElementById('15').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=3TufSRaHB6g&itag=22';
   });
     
-document.getElementById('14').addEventListener('touchstart', function() {
+document.getElementById('14').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=ahf0zCaqrwM&itag=22';
   });
        
-document.getElementById('13').addEventListener('touchstart', function() {
+document.getElementById('13').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=rYLzxcU6ROM&itag=22';
   });
        
-document.getElementById('12').addEventListener('touchstart', function() {
+document.getElementById('12').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=rvFMBRnR3ms&itag=22';
   });
        
-document.getElementById('11').addEventListener('touchstart', function() {
+document.getElementById('11').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=EOHYT5q5lhQ&itag=22';
   });
        
-document.getElementById('10').addEventListener('touchstart', function() {
+document.getElementById('10').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=iyN27R7UDnI&itag=22';
   });
        
-document.getElementById('9').addEventListener('touchstart', function() {
+document.getElementById('9').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=sB1EPGmpzyg&itag=22';
   });
     
-document.getElementById('8').addEventListener('touchstart', function() {
+document.getElementById('8').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=QKxep82_9b8&itag=22';
   });
     
-document.getElementById('7').addEventListener('touchstart', function() {
+document.getElementById('7').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=LKUPAk5049M&itag=22';
   });
 
-document.getElementById('6').addEventListener('touchstart', function() {
+document.getElementById('6').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=TzupkDwOXEM&itag=22';
   });
 
-document.getElementById('5').addEventListener('touchstart', function() {
+document.getElementById('5').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=mFKCW_D2oE4&itag=22';
   });
 
-document.getElementById('4').addEventListener('touchstart', function() {
+document.getElementById('4').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=skPI-BhohR8&itag=22';
   });
 
-document.getElementById('3').addEventListener('touchstart', function() {
+document.getElementById('3').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=Mi1ObfOUO_g&itag=22';
   });
 
-document.getElementById('2').addEventListener('touchstart', function() {
+document.getElementById('2').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=FgciX_upBSg&itag=22';
   });
 
-document.getElementById('1').addEventListener('touchstart', function() {
+document.getElementById('1').addEventListener('touchstart', {passive: true}, function() {
     document.getElementById('video').src = 'https://invidio.us/latest_version?id=LoadZQkrfcQ&itag=22';
   });
   </script>
