@@ -249,17 +249,17 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
-slider.addEventListener('touchstart', {passive: true}, (e) => {
+slider.addEventListener('touchstart', (e) => {
   isDown = true;
   slider.classList.add('active');
   startX = e.pageX - slider.offsetLeft;
   scrollLeft = slider.scrollLeft;
 });
-slider.addEventListener('touchend', {passive: true}, () => {
+slider.addEventListener('touchend', () => {
   isDown = false;
   slider.classList.remove('active');
 });
-slider.addEventListener('touchmove', {passive: true}, (e) => {
+slider.addEventListener('touchmove', (e) => {
   if(!isDown) return;
   e.preventDefault();
   const x = e.pageX - slider.offsetLeft;
@@ -270,7 +270,7 @@ slider.addEventListener('touchmove', {passive: true}, (e) => {
 const b = document.querySelector('.logo');
 const a = document.querySelector('body');
 let isDown1 = false;
-b.addEventListener('touchstart', {passive: true}, (e) => {
+b.addEventListener('touchstart', (e) => {
   isDown1 = true;
   b.classList.add('active');
   a.classList.toggle('active');
