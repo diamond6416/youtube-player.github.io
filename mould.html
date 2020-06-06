@@ -14,12 +14,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Steve Mould</title>
-  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
-Header set Cache-Control "max-age=31536000, public, no Etag, no Last-Modified"
-</FilesMatch>
-<FilesMatch "\.(html)$">
-Header set Cache-Control "no cache, Etag"
-</FilesMatch>
+  <?php
+  header("Cache-Control: no cache, Etag");
+?>
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 h1 {
