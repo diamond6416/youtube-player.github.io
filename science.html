@@ -12,9 +12,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="msapplication-starturl" content="/">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  
   <title>The Science Asylum</title>
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
@@ -46,7 +44,6 @@ html, body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 .items {
     position: relative;
     margin-top: 50px;
@@ -62,11 +59,9 @@ html, body {
     cursor: pointer;
     display: flex; 
   }
-
 .items.active {
   transform: scale(1.011);
 }
-
 .item {
   background: #333333;
   border: white;
@@ -109,25 +104,17 @@ body.active {
   transform: scale(0.9);
 }
 .logo {
-    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
-    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
-    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
     -webkit-user-select: none;
-    -ms-user-select: none; /* From IE10 only */
-    user-select: none; /* Not valid CSS yet, as of July 2012 */
-
-    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-select: none;
+    -webkit-user-drag: none;
     user-drag: none;
 }
 .channel {
   margin-top: -22%;
   top:0;
-    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
     -webkit-user-select: none;
-    -ms-user-select: none; /* From IE10 only */
-    user-select: none; /* Not valid CSS yet, as of July 2012 */
-
-    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-select: none;
+    -webkit-user-drag: none;
     user-drag: none;
 }
 .animation2 {
@@ -148,7 +135,6 @@ body.active {
   from {
     opacity: 0;
   }
- 
   to {
     opacity: 1;
   }
@@ -158,15 +144,12 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
-
 .item:hover, .item:active {
   background: #2d2d2d;
 }
-
 a:link {
 text-decoration: none;
 }
-
 .channel {
   height: 100%;
   width: 100%;
@@ -190,22 +173,16 @@ text-decoration: none;
   -webkit-transition: all 0.01s;
   object-fit: cover;
 }
-
 .back {
  margin: 0;
  position: absolute;
   top: 0;
-   -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
     -webkit-user-select: none;
-    -ms-user-select: none; /* From IE10 only */
-    user-select: none; /* Not valid CSS yet, as of July 2012 */
-
-    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-select: none;
+    -webkit-user-drag: none;
     user-drag: none;
   display: block;
-  
 }
-
 .y {
   position: relative;
   margin: 45%;
