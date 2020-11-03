@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="apple-touch-startup-image"
+    href="https://raw.githubusercontent.com/diamond6416/youtube-player.github.io/master/2048x1536.png"
+    media="(device-width:  768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="manifest" href="https://diamond6416.github.io/youtube-player.github.io/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Triplay">
+  <meta name="apple-mobile-web-app-title" content="Triplay">
+  <meta name="theme-color" content="#333333">
+  <meta name="msapplication-navbutton-color" content="#333333">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Youtube Player</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.15.0/inter.min.css" integrity="sha512-LmuBiKMv0sdyc1LQk0LPrsjj3KSoVgVpAXUoFGY8Ye5Zi1mff0it3I42dkh3/NGQgtkqiHcdWOcHGUmOzYLETQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="stylesheet.css">
+  
+</head>
+
+<body>
+  <object ontouchstart="goBack()" data="back.svg" class="button"></object>
+  <div class="back-layer"></div>
+  <span class="title">Channels</span>
+  <div class="wrapper">
+    <div class="items" id="container">
+
+      
+    
+  </div>
+  <script src="scroll.js"></script>
+  <script src="play.js"></script>
+  <script src="channels.js"></script>
+  <script>
+    const button = document.querySelector('.button');
+    function goBack() {
+      button.classList.add('active');
+      window.history.back();
+    }
+    </script>
+  
+</body>
+
+</html>

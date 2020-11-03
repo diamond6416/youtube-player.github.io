@@ -1,262 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<link rel="apple-touch-startup-image" href="https://raw.githubusercontent.com/diamond6416/youtube-player.github.io/master/2048x1536.png" media="(device-width:  768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
-<link rel="manifest" href="https://diamond6416.github.io/youtube-player.github.io/manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-touch-fullscreen" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Triplay">
-<meta name="apple-mobile-web-app-title" content="Triplay">
-<meta name="theme-color" content="#333333">
-<meta name="msapplication-navbutton-color" content="#333333">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="msapplication-starturl" content="/">
-<meta name="viewport" content="width=device-width, initial-scale=1.145, shrink-to-fit=no, user-scalable=no">
+  <link rel="apple-touch-startup-image"
+    href="https://raw.githubusercontent.com/diamond6416/youtube-player.github.io/master/2048x1536.png"
+    media="(device-width:  768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  <link rel="manifest" href="https://diamond6416.github.io/youtube-player.github.io/manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Triplay">
+  <meta name="apple-mobile-web-app-title" content="Triplay">
+  <meta name="theme-color" content="#333333">
+  <meta name="msapplication-navbutton-color" content="#333333">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Youtube Player</title>
-  <?php
-  header("Cache-Control: no cache, Etag");
-?>
-   <style>
-   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-h1 {
-   font-family: 'Roboto', sans-serif;
-  color: white;
-  -webkit-user-select: none;
-  font-weight: 500;
-  font-size: 38px;
-  margin: 0;
-  position: relative;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-}
-html, body {
-  margin: 0;
-  padding: 0;
-}
-.wrapper {
-  width:93%;
-  -webkit-user-select: none;
-  margin-top: 0%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.items {
-    position: relative;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    white-space: pre;
-   -webkit-transition: all 0.0555s;
-    transform: scale(1);
-    will-change: transform;
-    user-select: none;
-    cursor: pointer;
-    display: flex; 
-  }
-.items.active {
-  transform: scale(1.011);
-}
-.item {
-  display: flex;
-  justify-content: center;
-  background: #333333;
-  height: 370px;
-  margin-right: 4%;
-  flex: 0 0 370px;
-  border-radius: 10%;
-}
-body {
-  background-color:#393939;
-  -webkit-user-select: none;
-  user-select: none;
-}
-@-webkit-keyframes animation1 {
-  0%   {background-color: steelblue;}
-  14.285714285714286%  {background-color:MediumSeaGreen;}
-  28.571428571428573%  {background-color: LightCoral;}
-  42.85714285714286%  {background-color: orange;}
-  57.142857142857146%  {background-color: teal;}
-  71.42857142857143%  {background-color: #6666ff;}
-  85.71428571428572%  {background-color: DarkSlateGray;}
-  100% {background-color: gold;}
-}
-body.active {
- -webkit-animation-name: animation1;
- -webkit-animation-duration: 20s; 
- -webkit-animation-iteration-count: infinite
-}
-.logo
-{
-  -webkit-user-select: none;
- margin-top: 3%;
-  margin-left: 3.53%;
- -webkit-transition: all 0.01s;
- position: relative;
- cursor: pointer;
-  will-change: transform;
-}
-.logo.active {
-  transform: scale(0.9);
-}
-.logo {
-    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
-    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
-    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
-    -webkit-user-select: none;
-    -ms-user-select: none; /* From IE10 only */
-    user-select: none; /* Not valid CSS yet, as of July 2012 */
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.15.0/inter.min.css" integrity="sha512-LmuBiKMv0sdyc1LQk0LPrsjj3KSoVgVpAXUoFGY8Ye5Zi1mff0it3I42dkh3/NGQgtkqiHcdWOcHGUmOzYLETQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="stylesheet.css">
+  
+</head>
 
-    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
-    user-drag: none;
-}
-.channel {
-  border-radius:50%;
-    -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
-    -webkit-user-select: none;
-    -ms-user-select: none; /* From IE10 only */
-    user-select: none; /* Not valid CSS yet, as of July 2012 */
+<body>
+  
+  <div class="back-layer"></div>
+  <span class="title">Channels</span>
+  <div class="wrapper">
+    <div class="items">
 
-    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
-    user-drag: none;
-}
-.animation2 {
- -webkit-animation-name: fade;
- -webkit-animation-duration: 3.5s; 
- -webkit-animation-iteration-count: 1
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-delay: 0s;}
-  .animation3 {
- -webkit-animation-name: fade;
- -webkit-animation-duration: 4.5s; 
- -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: both;
-    -webkit-animation-delay: 1s;
-}
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-body {
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-}
-.item:hover, .item:active {
-  background: #2d2d2d;
-}
-a:link {
-text-decoration: none;
-}
-.channel {
-  position: relative;
-  display: flex;
-  height: 55%;
-  width: inherit;
-}
-.txt {
-  transform: translateY(25%);
-  height: 220px;
-}
-   </style>
-  </head>
-<body ontouchstart="" translate="no">
-  <!-- width and height makes logo non-zoomable--> 
-   <img src="https://raw.githubusercontent.com/diamond6416/youtube-player.github.io/master/Logo00.png" width= 10%; height= 10%; class="logo animation3";/>
-     <center><div class="wrapper animation2">
-  <div class="items">  
-    <div class="item">
-      <center><a href="/youtube-player.github.io/mould.html">
-     <img src="https://watch.nettohikari.com/ggpht/a/AATXAJzJztQdldFCOcrMUN1ojDmPcnsL0m1ZJuw9xw=s176-c-k-c0x00ffffff-no-rj-mo" class="channel";/><div class="txt"><h1>Steve Mould</h1></div></a>  
-      </center>
-    </div>
-    <div class="item">
-      <center><a href="/youtube-player.github.io/in_a_nutshell.html">
-     <img src="https://watch.nettohikari.com/ggpht/a/AGF-l79_o6QngIpSSvxjU7AnZu86z3_7OzCy-wn2Bw=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><div class="txt"><h1>Kurzgesagt<br>In a Nutshell</h1></div></a>
-      </center>
-    </div>
-    <div class="item">
-      <center><a href="/youtube-player.github.io/science.html">
-     <img src="https://watch.nettohikari.com/ggpht/a/AATXAJx-i5Oe1F1JIi5ae3Dyj4ro_pJp458kH4eWrQ=s176-c-k-c0x00ffffff-no-rj-mo" class="channel";/><div class="txt"><h1>The Science Asylum</h1></div></a>
-      </center>
-    </div>
-    <div class="item">
-      <center><a href="veritasium">
-     <img src="https://watch.nettohikari.com/ggpht/a/AGF-l7-_ZcdonX2zvx6WdAnHOEO5cgrVr2a2cpVLgA=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><div class="txt"><h1>Veritasium</h1></div></a>
-      </center>
-    </div>
-    <div class="item">
-      <center><a href="ted-ed">
-     <img src="https://watch.nettohikari.com/ggpht/a/AGF-l7_KYzscxJEPD222JCwLBSiMIDXi5wtsWc4Rww=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><div class="txt"><h1>TED-Ed</h1></div></a>
-      </center>
-    </div>
-    <div class="item">
-      <center><a href="minute_physics">
-     <img src="https://watch.nettohikari.com/ggpht/a/AGF-l7_90_OopgqRNxh6zi7bhcOT8SHeQLbJDR1ZFQ=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><div class="txt"><h1>Minute Physics</h1></div></a>
-      </center>
-    </div>
-    <div class="item">
-      <center><a href="minute_earth">
-     <img src="https://watch.nettohikari.com/ggpht/a/AGF-l7-nmd4mkyVlqI3BlpGsgyoCqhBGtXkHErAiww=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><div class="txt"><h1>Minute Earth</h1></div></a>
-      </center>
-    </div>
-    <div class="item">
-      <center><a href="dantdm">
-     <img src="https://watch.nettohikari.com/ggpht/a/AGF-l7_t5ekdUDowWCGVJ5FIGoBO4lI4TFCoC_7vZQ=s288-c-k-c0xffffffff-no-rj-mo" class="channel";/><div class="txt"><h1>DanTDM</h1></div></a>
-      </center>
-    </div>
-
+      <div class="item"><a href="0.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJysrPp8bKvdgCWg2CxciG6c-Pfw8G2LAfDOshw09w=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Mumbo Jumbo</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="1.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJw91NvQRluSvZoLrGXkwMC6r0CwYjD58HftKSul8g=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Veritasium</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="2.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJy3xtsIRabi8_-bFFQYCKg2UTHDEiyFbyfrYbj7Tg=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Numberphile</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="3.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJxg_WoKORzNoXHFEqTXUrKHeUR9Zn1y6LzGylfCtQ=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Computerphile</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="4.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJzF-K41Fq96yE6jxs_fE6Hr7zvMXsQbqz1QNxGpjg=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>3Blue1Brown</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="5.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJzlP-lXduhTubS1k-Dh2YM8wJrxZwZnQjSp_aZlOA=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Standup Maths</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="6.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJwqTP631y63gzRfteNeRY6OZgsyIBhZWWlS6UvA2g=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>CrashCourse</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="7.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJz7l1SVybs0VPRCnd0xSIoSIMnTTd9ABp8bSuRM=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Scishow</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="8.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJzaYQ4VFKH5diOrT12RmcpqTtgMLHWFP_dpPCtw=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Scishow Space</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="9.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJxOeBwKmjYvfuLwFuTuD3zFTffWCZbT5b5ufr8=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Mark Rober</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="10.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJw3KkIY6VQ3tbSVLfKdEqFQ8rCfBewxLc0dJv8i=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Minute Physics</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="11.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJwRC1wcikUn9v-ucFt_fnGyMCf3MxQMck5gQex5=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Minute Earth</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="12.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJw2iReKZCN7FGn0Mk2iFxO4fbBf7bpQeSjHf6IaIg=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Smarter Everyday</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="13.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJxuvwdB2H7bQQyQk8Aqu28rYXWmz_WJWjbwgcBD=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Marques Brownlee</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="14.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJwDmz-Sqfl3nOecezetnZo7lxo2sSFGahLOY7dGKg=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Tom Scott</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="15.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJxvfjw6Rn0yjs1Ni_ohsPi95C8yt66XgpppftgfGA=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>TedEd</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="16.html">
+        <div class="channel"><img  class="chan" src="https://upload.wikimedia.org/wikipedia/en/6/65/Kurzgesagt.png" /></div>
+        <div class="txt">
+          <h1>Kurzgesagt</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="17.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJzV7GtApxdOTiRhzYwt8-ZP5SBlp3c8R11OxBSOIA=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Two Minute Papers</h1>
+        </div>
+      </a></div>
+    <div class="item"><a href="18.html">
+        <div class="channel"><img class="chan"
+            src="https://yt3.ggpht.com/a/AATXAJwC9ms0DECHzCCCVGnMM_rOhmz0CyGFvGfo_xxDvWs=s316-c-k-c0x00ffffff-no-rj" />
+        </div>
+        <div class="txt">
+          <h1>Steve Mould</h1>
+        </div>
+      </a></div>
   </div>
 </div>
-  </center>
-  <script src="https://raw.githubusercontent.com/diamond6416/youtube-player.github.io/master/polyfil-passive.js"></script>
-  <script id="rendered-js">
-       const slider = document.querySelector('.items');
-let isDown = false;
-let startX;
-let scrollLeft;
-
-slider.addEventListener('touchstart', (e) => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('touchend', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('touchmove', (e) => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 3.055; //scroll-fast
-  slider.scrollLeft = scrollLeft - walk;
-});
-
-const b = document.querySelector('.logo');
-const a = document.querySelector('body');
-let isDown1 = false;
-b.addEventListener('touchstart', (e) => {
-  isDown1 = true;
-  b.classList.add('active');
-  a.classList.toggle('active');
-});
-    b.addEventListener('touchend', () => {
-  isDown1 = false;
-  b.classList.remove('active');
-  
-});
-   </script>
+  <script src="scroll.js"></script>
 </body>
+
 </html>
