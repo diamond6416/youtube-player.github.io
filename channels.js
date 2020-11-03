@@ -16,4 +16,5 @@ xmlhttp.onreadystatechange = function() {
 };
 
 xmlhttp.open("GET", "https://invidious.snopyta.org/api/v1/channels/UChFur_NwVSbUozOcF_F2kMg/videos?page=1", true);
+xmlhttp.setRequestHeader('Access-Control-Allow-Origin', 'https://invidious.snopyta.org');
 xmlhttp.send();
