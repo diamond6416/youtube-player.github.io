@@ -26,7 +26,20 @@
 <body>
   <object ontouchstart="goBack()" data="back.svg" class="button"></object>
   <div class="back-layer"></div>
-  <span class="title">Channels</span>
+  <div class="vidbox">
+
+    <video class="myvideo" id="myvideo" controls muted>
+      <source src=""/>
+      <audio id="myaudio">
+          <source src=""/>
+      </audio>
+  </video>
+
+  </div>
+  
+  
+
+
   <div class="wrapper">
     <div class="items" id="container">
 
@@ -36,6 +49,7 @@
   <script src="scroll.js"></script>
   <script src="play.js"></script>
   <script src="channels.js"></script>
+  <script src="dual.js"></script>
   <script>
     const button = document.querySelector('.button');
     function goBack() {
