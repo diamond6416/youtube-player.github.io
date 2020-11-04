@@ -6,9 +6,9 @@ xmlhttp.onreadystatechange = function() {
     var i = 0;
     f="";
     for (i = 0; i<32; i++){
-    y = foo[i];
-    a = y.id;
-    b = y.snippet;
+    
+    a = foo[i].id;
+    b = foo[i].snippet;
     vidId = a.videoId;
     ti = b.title;
 
