@@ -1,3 +1,23 @@
+.vidbox {
+  position: absolute;
+  height: min-content;
+  width: 60%;
+  top: 24%;
+   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+   overflow: hidden;
+   border-radius: 20px;
+}
+
+.myvideo {
+  position: static;
+  width: 100%;
+  height: auto;
+  
+  
+}
+
 .button {
   position: absolute;
   width: 7%;
@@ -71,7 +91,7 @@ h1 {
    -webkit-user-select: none;
    margin-top: 5%;
    position: absolute;
-   top: 50%;
+   top: 65%;
    left: 50%;
    -webkit-transform: translate(-50%, -50%);
    transform: translate(-50%, -50%);
@@ -150,7 +170,7 @@ img {
   overflow:hidden;
   flex-direction: column;
   margin: auto;
-  margin-top: -1.1em !important;
+  
   border-radius: 9.3px;
   border: none;
 }
@@ -182,7 +202,7 @@ img {
     margin: auto;
     position: relative;
     word-wrap: break-word;
-    margin-top: -0.65em !important;
+    
   }
   a {
     width: 100%;
