@@ -1,19 +1,25 @@
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
-    var foo = JSON.parse(this.responseText);
+    var o = JSON.parse(this.responseText);
+    var foo = o.items;
     var i = 0;
     f="";
     for (i = 0; i<32; i++){
     y = foo[i];
+    a = y.id;
+    b = y.snippet;
+    vidId = a.videoId;
+    ti = b.title;
+
     f = `${f}
 <div class="item">
-<a onclick="load(${y.videoId});return false">
+<a onclick="load(${vidId});return false">
 <div class="channel0">
-<img src="https://i.ytimg.com/vi/${y.videoId}/hqdefault.jpg"/>
+<img src="https://i.ytimg.com/vi/${vidId}/hqdefault.jpg"/>
 </div>
 <div class="sm-txt">
-<h3>${y.title}</h3>
+<h3>${ti}</h3>
 </div>
 </a>
 </div>
