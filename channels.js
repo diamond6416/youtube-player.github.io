@@ -26,7 +26,5 @@ xmlhttp.onreadystatechange = function() {
   }
 };
 
-xmlhttp.open("GET", "https://tube.connect.cafe/api/v1/channels/UChFur_NwVSbUozOcF_F2kMg/videos?page=1", true);
-//xmlhttp.setRequestHeader('Access-Control-Allow-Origin', 'https://https://tube.connect.cafe/');
-//xmlhttp.setRequestHeader('referer', 'https://https://tube.connect.cafe/');
+xmlhttp.open("GET", "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCAe6KKwsLoObsKMNLutxo0O1Ho-nKSVDU&channelId=UChFur_NwVSbUozOcF_F2kMg&part=snippet,id&order=date&maxResults=20", true);
 xmlhttp.send();

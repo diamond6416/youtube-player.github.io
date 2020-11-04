@@ -26,12 +26,12 @@ xmlhttp.onreadystatechange = function() {
     
     
     
-    document.getElementById("video").src = f;
+    document.getElementById("myvideo").src = f;
   }
 };
 function load(a){
 auUrl = "https://main163ey8y3y713183134jfn24u.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestaudio";
-document.getElementById("audio").src = auUrl;
+document.getElementById("myaudio").src = auUrl;
 vidUrl = "https://main163ey8y3y713183134jfn24u.herokuapp.com/api/info?url=https://www.youtube.com/watch?v="+a;
 xmlhttp.open("GET", vidUrl, true);
 xmlhttp.send();
