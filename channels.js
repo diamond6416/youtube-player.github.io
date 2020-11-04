@@ -2,13 +2,13 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var o = JSON.parse(this.responseText);
-    var foo = o.items;
+    
     var i = 0;
     f="";
     for (i = 0; i<32; i++){
-    
-    a = foo[i].id;
-    b = foo[i].snippet;
+    foo = o.items[i];
+    a = foo.id;
+    b = foo.snippet;
     vidId = a.videoId;
     ti = b.title;
 
