@@ -7,9 +7,10 @@
   -webkit-transform: translate(-50%, -50%);
    transform: translate(-50%, -50%);
    overflow: hidden;
-   border-radius: 20px;
 }
-
+video {
+  border-radius: 20px;
+}
 .myvideo {
   position: static;
   width: 100%;
@@ -158,7 +159,7 @@ img {
     border:none;
   }
 
-  .channel0 {
+  .channel0 { /* for auto generated thumbnails */
     -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
     -webkit-user-select: none;
     -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
@@ -196,8 +197,8 @@ img {
   }
   .sm-txt {
     display: flex;
-    align-content: center;
-    height: min-content;
+    align-items: center;
+    height: 34%;
     width: 80%;
     margin: auto;
     position: relative;

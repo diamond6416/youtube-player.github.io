@@ -2,11 +2,11 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var foo = JSON.parse(this.responseText);
-    var x = foo.info;
-    var list = new Array(-1, -1, -1, -1, -1, -1);
+    x = foo.info;
+    list = new Array(-1, -1, -1, -1, -1, -1);
     
-    var i = 0;
-    for (i = 0; i<20; i++){
+    
+    for (i = 0; i<21; i++){
     y = x.formats[i];
     if ((y.ext=="webm") && (y.format_note=="1080p")){list[0]=i;}
     else if ((y.ext=="webm") && (y.format_note=="1080p60")){list[1]=i;}
@@ -22,17 +22,20 @@ xmlhttp.onreadystatechange = function() {
     else if (list[2]>=0){f=x.formats[list[2]].url;}
     else if (list[3]>=0){f=x.formats[list[3]].url;}
     else if (list[4]>=0){f=x.formats[list[4]].url;}
-    else if (list[4]>=0){f=x.formats[list[5]].url;}
+    else if (list[5]>=0){f=x.formats[list[5]].url;}
     
-    
-    
-    document.getElementById("myvideo").src = f;
+    console.log(f);
+
+    t = "<video class=\"myvideo\" id=\"myvideo\" controls muted>\n<source src=\""+f+"/>\n<audio id=\"myaudio\">\n<source src=\""+auUrl+"\"/>\n</audio>\n</video>";
+    document.getElementById("sample").innerHTML = t;
+    //document.getElementById("myvideo").src = f;
   }
 };
 function load(a){
 auUrl = "https://main163ey8y3y713183134jfn24u.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestaudio";
-document.getElementById("myaudio").src = auUrl;
-vidUrl = "https://main163ey8y3y713183134jfn24u.herokuapp.com/api/info?url=https://www.youtube.com/watch?v="+a;
+//document.getElementById("myaudio").src = auUrl;
+var vidUrl = "https://main163ey8y3y713183134jfn24u.herokuapp.com/api/info?url=https://www.youtube.com/watch?v="+a;
 xmlhttp.open("GET", vidUrl, true);
+//xmlhttp.setRequestHeader("Origin", "https://heroku.app/");
 xmlhttp.send();
 }

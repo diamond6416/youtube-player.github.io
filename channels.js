@@ -1,36 +1,26 @@
 var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
+xmlhttp.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
-    var o = JSON.parse(this.responseText);
-    
-    var i = 0;
-    f="";
-    for (i = 0; i<32; i++){
-    foo = o.items[i];
-    a = foo.id;
-    b = foo.snippet;
-    vidId = a.videoId;
-    ti = b.title;
+    var z = JSON.parse(this.responseText);
 
-    f = `${f}
-<div class="item">
-<a onclick="load(${vidId});return false">
-<div class="channel0">
-<img src="https://i.ytimg.com/vi/${vidId}/hqdefault.jpg"/>
-</div>
-<div class="sm-txt">
-<h3>${ti}</h3>
-</div>
-</a>
-</div>
-</div>
-`;
+    var f = "";
+    var j = 0;
+    for (j = 0; j < 20; j++) {
+
+      g = z[j];
+
+      vidId = g.videoId;
+      ti = g.title;
+
+      f += "\n<div class=\"item\">\n<a href=\"javascript:load(\'" + vidId + "\')\">\n<div class=\"channel0\">\n<img src=\"https://i.ytimg.com/vi/" + vidId + "/hqdefault.jpg\"/>\n</div>\n<div class=\"sm-txt\">\n<h3>" + ti + "</h3>\n</div>\n</a>\n</div>\n</div>\n";
     }
     document.getElementById("container").innerHTML = f;
     
-    
+
+
   }
 };
 
-xmlhttp.open("GET", "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCAe6KKwsLoObsKMNLutxo0O1Ho-nKSVDU&channelId=UChFur_NwVSbUozOcF_F2kMg&part=snippet,id&order=date&maxResults=20", true);
+xmlhttp.open("GET", "https://invidiou.site/api/v1/channels/UChFur_NwVSbUozOcF_F2kMg/videos?page=1", true);
+//xmlhttp.setRequestHeader("Origin", "https://heroku.app/");
 xmlhttp.send();
