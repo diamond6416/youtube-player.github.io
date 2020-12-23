@@ -1,6 +1,8 @@
 var bool = true;
 var fallbackvid = false;
 var l = 21;
+var f = '';
+var vidURL = '';
 function load(a){
 let auURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestaudio";
 let vidUrlS = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/info?url=https://www.youtube.com/watch?v="+a+"&flatten=True";
@@ -34,15 +36,15 @@ var x = foo.videos[0];
     else {fallbackvid = true;}
   }
     }
-    if (fallbackvid){var vidURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestvideo";}
+    if (fallbackvid) {vidURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestvideo";}
     else {
     if (list[0]>=0){var f=x.formats[list[0]];}
-    else if (list[1]>=0){var f=x.formats[list[1]];}
-    else if (list[2]>=0){var f=x.formats[list[2]];}
-    else if (list[3]>=0){var f=x.formats[list[3]];}
-    else if (list[4]>=0){var f=x.formats[list[4]];}
-    else if (list[5]>=0){var f=x.formats[list[5]];}
-    var vidURL = f.url;
+    else if (list[1]>=0){f=x.formats[list[1]];}
+    else if (list[2]>=0){f=x.formats[list[2]];}
+    else if (list[3]>=0){f=x.formats[list[3]];}
+    else if (list[4]>=0){f=x.formats[list[4]];}
+    else if (list[5]>=0){f=x.formats[list[5]];}
+    vidURL = f.url;
     }
 
     video = document.getElementById('myvideo');
