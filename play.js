@@ -33,19 +33,21 @@ var x = foo.videos[0];
     else if ((y.ext=="mp4") && (y.format_note=="1080p60")){list[3]=i;}
     else if ((y.ext=="webm") && (y.format_note=="720p")){list[4]=i;}
     else if ((y.ext=="webm") && (y.format_note=="720p60")){list[5]=i;}
-    else {fallbackvid = true;}
+    
   }
     }
-    if (fallbackvid) {vidURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestvideo";}
-    else {
     if (list[0]>=0){var f=x.formats[list[0]];}
     else if (list[1]>=0){f=x.formats[list[1]];}
     else if (list[2]>=0){f=x.formats[list[2]];}
     else if (list[3]>=0){f=x.formats[list[3]];}
     else if (list[4]>=0){f=x.formats[list[4]];}
     else if (list[5]>=0){f=x.formats[list[5]];}
-    vidURL = f.url;
+    else {fallbackvid = true;}
+    if (fallbackvid){
+      vidURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestvideo";
     }
+    else {vidURL = f.url;}
+    
 
     video = document.getElementById('myvideo');
     vsource = document.getElementById('svideo');
