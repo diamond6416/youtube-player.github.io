@@ -34,7 +34,7 @@ x = foo.videos[0];
     else {fallbackvid = true;}
   }
     }
-    if (fallbackvid){const vidURL= "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestvideo";}
+    if (fallbackvid){let vidURL= "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestvideo";}
     else {
     if (list[0]>=0){f=x.formats[list[0]];}
     else if (list[1]>=0){f=x.formats[list[1]];}
@@ -42,7 +42,7 @@ x = foo.videos[0];
     else if (list[3]>=0){f=x.formats[list[3]];}
     else if (list[4]>=0){f=x.formats[list[4]];}
     else if (list[5]>=0){f=x.formats[list[5]];}
-    const vidURL = f.url;
+    let vidURL = f.url;
     }
 
     var video = document.getElementById('myvideo');
