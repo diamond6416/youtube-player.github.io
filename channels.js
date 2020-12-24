@@ -1,7 +1,8 @@
 var f = "";
 var g = null;
+const proxyu = "bfapwmmjrm9kpzg8eb4.herokuapp.com/";
 var prefix = "tube.connect.cafe";
-const channelURL = "https://"+prefix+"/api/v1/channels/UChFur_NwVSbUozOcF_F2kMg/videos?page=1";
+const channelURL = "https://"+proxyu+prefix+"/api/v1/channels/UChFur_NwVSbUozOcF_F2kMg/videos?page=1";
 fetch (channelURL)
 .then (response0 => response0)
 .then (rJSON0 => rJSON0.json())
