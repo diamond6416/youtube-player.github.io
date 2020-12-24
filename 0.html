@@ -24,7 +24,9 @@
 </head>
 
 <body>
-  <object ontouchstart="javascript:goBack()" data="back.svg" class="button"></object>
+  
+  <object data="back.svg" class="button"></object>
+  
   <div class="back-layer"></div>
   <div class="vidbox" id="VIDBOX">
 
@@ -51,7 +53,9 @@
   <script src="channels.js"></script>
   <script src="dual.js"></script>
   <script>
+    
     const button = document.querySelector('.button');
+    button.addEventListener("click", goBack);
     function goBack() {
       button.classList.add('active');
       window.history.back();
