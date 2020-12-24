@@ -4,8 +4,8 @@ var l = 21;
 var f = '';
 var vidURL = '';
 function load(a){
-let auURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestaudio";
-let vidUrlS = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/info?url=https://www.youtube.com/watch?v="+a+"&flatten=True";
+const auURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestaudio";
+const vidUrlS = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/info?url=https://www.youtube.com/watch?v="+a+"&flatten=True";
 
 fetch (vidUrlS)
 .then (response => response)
@@ -49,15 +49,16 @@ var x = foo.videos[0];
     else {vidURL = f.url;}
     
 
-    video = document.getElementById('myvideo');
-    vsource = document.getElementById('svideo');
-    
-    asource = document.getElementById('saudio');
+    const video = document.getElementById('myvideo');
+    const vsource = document.getElementById('svideo');
+    const audio = document.getElementById('myaudio');
+    const asource = document.getElementById('saudio');
 
     vsource.src = vidURL;
     asource.src = auURL;
 
     video.load();
+    audio.load();
     video.play();
   }
 );
