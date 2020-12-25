@@ -1,3 +1,7 @@
+const video = document.getElementById('myvideo');
+const vsource = document.getElementById('svideo');
+const audio = document.getElementById('myaudio');
+const asource = document.getElementById('saudio');
 var vExt = "";
 var bool = true;
 var fallbackvid = false;
@@ -5,6 +9,7 @@ var l = 21;
 var f = '';
 var vidURL = '';
 async function load(a){
+video.pause();
 const auURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestaudio";
 const vidUrlS = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/info?url=https://www.youtube.com/watch?v="+a+"&flatten=True";
 
@@ -46,15 +51,11 @@ var x = foo.videos[0];
     else {vidURL = f.url;}
     
 
-    const video = document.getElementById('myvideo');
-    const vsource = document.getElementById('svideo');
-    const audio = document.getElementById('myaudio');
-    const asource = document.getElementById('saudio');
+    
 
     vsource.src = vidURL;
     asource.src = auURL;
-    //vsource.type = "video/"+vExt;
-    asource.type = "audio/webm";
+    
 
     video.load();
     audio.load();
