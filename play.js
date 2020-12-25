@@ -38,11 +38,11 @@ var x = foo.videos[0];
     else if ((y.ext=="mp4") && (y.format_note=="1080p")){list[2]=i;}
     else if ((y.ext=="mp4") && (y.format_note=="1080p60")){list[3]=i;}
     else if ((y.ext=="webm") && (y.format_note=="720p")){list[4]=i;}
-    else if ((y.ext=="webm") && (y.format_note=="720p60")){list[5]=i;}
+    else if ((y.ext=="mp4") && (y.format_note=="720p60")){list[5]=i;}
     
   }
     }
-    if (list[3]>=0){var f=x.formats[list[3]]; vExt = "mp4";}
+    if (list[5]>=0){var f=x.formats[list[5]]; vExt = "mp4";}
     
     else {fallbackvid = true;}
     if (fallbackvid){
