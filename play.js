@@ -37,7 +37,7 @@ var x = foo.videos[0];
     
   }
     }
-    if (list[2]>=0){var f=x.formats[list[2]]; vExt = "mp4";}
+    if (list[3]>=0){var f=x.formats[list[3]]; vExt = "mp4";}
     
     else {fallbackvid = true;}
     if (fallbackvid){
@@ -53,7 +53,7 @@ var x = foo.videos[0];
 
     vsource.src = vidURL;
     asource.src = auURL;
-    vsource.type = "video/"+vExt;
+    //vsource.type = "video/"+vExt;
     asource.type = "audio/webm";
 
     video.load();
