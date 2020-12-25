@@ -3,7 +3,7 @@ var fallbackvid = false;
 var l = 21;
 var f = '';
 var vidURL = '';
-function load(a){
+async function load(a){
 const auURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestaudio";
 const vidUrlS = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/info?url=https://www.youtube.com/watch?v="+a+"&flatten=True";
 
