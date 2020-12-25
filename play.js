@@ -1,3 +1,4 @@
+var vExt = "";
 var bool = true;
 var fallbackvid = false;
 var l = 21;
@@ -36,12 +37,12 @@ var x = foo.videos[0];
     
   }
     }
-    if (list[0]>=0){var f=x.formats[list[0]];}
-    else if (list[1]>=0){f=x.formats[list[1]];}
-    else if (list[2]>=0){f=x.formats[list[2]];}
-    else if (list[3]>=0){f=x.formats[list[3]];}
-    else if (list[4]>=0){f=x.formats[list[4]];}
-    else if (list[5]>=0){f=x.formats[list[5]];}
+    if (list[0]>=0){var f=x.formats[list[0]]; vExt = "webm";}
+    else if (list[1]>=0){f=x.formats[list[1]]; vExt = "webm";}
+    else if (list[2]>=0){f=x.formats[list[2]]; vExt = "mp4";}
+    else if (list[3]>=0){f=x.formats[list[3]]; vExt = "mp4";}
+    else if (list[4]>=0){f=x.formats[list[4]]; vExt = "webm";}
+    else if (list[5]>=0){f=x.formats[list[5]]; vExt = "webm";}
     else {fallbackvid = true;}
     if (fallbackvid){
       vidURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestvideo";
@@ -56,6 +57,8 @@ var x = foo.videos[0];
 
     vsource.src = vidURL;
     asource.src = auURL;
+    vsource.type = "video/"+vExt;
+    ausource.type = "audio/webm";
 
     video.load();
     audio.load();
