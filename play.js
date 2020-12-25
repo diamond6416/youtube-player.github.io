@@ -58,7 +58,7 @@ var x = foo.videos[0];
     vsource.src = vidURL;
     asource.src = auURL;
     vsource.type = "video/"+vExt;
-    ausource.type = "audio/webm";
+    asource.type = "audio/webm";
 
     video.load();
     audio.load();
