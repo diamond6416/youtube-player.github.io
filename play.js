@@ -59,7 +59,10 @@ var x = foo.videos[0];
 
     video.load();
     audio.load();
-    video.play();
+    video.oncanplay = function() {
+      video.play();
+    }
+    
   }
 );
   }
