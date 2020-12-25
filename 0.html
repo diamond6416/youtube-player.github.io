@@ -30,35 +30,36 @@
   <div class="back-layer"></div>
   <div class="vidbox" id="VIDBOX">
 
-    <video class="myvideo" id="myvideo" controls muted>
-      <source  id="svideo" src=""/>
+    <video onclick="toggleVid()" class="myvideo" id="myvideo" controls muted>
+      <source id="svideo" src=""/>
   </video>
   <audio id="myaudio" controls>
     <source id="saudio" src=""/>
 </audio>
 
   </div>
-  
-  
-
 
   <div class="wrapper">
-    <div class="items" id="container">
-
-      
-    
+    <div class="items" id="container"></div>  
   </div>
+
   <script src="scroll.js"></script>
   <script src="play.js"></script>
   <script src="channels.js"></script>
   <script src="dual.js"></script>
   <script>
-    
+    const vidCont = document.getElementById("myvideo");
     const button = document.querySelector('.button');
     button.addEventListener("click", goBack);
     function goBack() {
       button.classList.add('active');
       window.history.back();
+    }
+    function toggleVid() {
+      if (vidCont.paused){
+        vidCont.play();
+      }
+      else {vidCont.pause();}
     }
     </script>
   
