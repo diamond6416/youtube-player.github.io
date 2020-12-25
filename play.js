@@ -37,12 +37,8 @@ var x = foo.videos[0];
     
   }
     }
-    if (list[0]>=0){var f=x.formats[list[0]]; vExt = "webm";}
-    else if (list[1]>=0){f=x.formats[list[1]]; vExt = "webm";}
-    else if (list[2]>=0){f=x.formats[list[2]]; vExt = "mp4";}
-    else if (list[3]>=0){f=x.formats[list[3]]; vExt = "mp4";}
-    else if (list[4]>=0){f=x.formats[list[4]]; vExt = "webm";}
-    else if (list[5]>=0){f=x.formats[list[5]]; vExt = "webm";}
+    if (list[2]>=0){var f=x.formats[list[2]]; vExt = "mp4";}
+    
     else {fallbackvid = true;}
     if (fallbackvid){
       vidURL = "https://mz8pri1hgfmas0rsq5x.herokuapp.com/api/play?url=https://www.youtube.com/watch?v="+a+"&format=bestvideo";
